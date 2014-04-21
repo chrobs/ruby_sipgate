@@ -22,6 +22,7 @@ module Rubysgate
         if r = client.call('samurai.SessionInitiate', args)
           puts "*** SMS sent to #{number} (#{r.inspect})"
           puts "*** SMS text: #{text}" if Rubysgate::Config.get :debug
+          return r
         else
           raise "sms send failed: #{r.inspect}"
         end
