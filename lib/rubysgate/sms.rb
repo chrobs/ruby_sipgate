@@ -15,11 +15,16 @@ module Rubysgate
         'TOS' => 'text',
         'Content' => text[0,159]
       }
-      if r = client.call('samurai.SessionInitiate', args)
-        puts "*** SMS sent to #{number} (#{r.inspect})"
-        puts "*** SMS text: #{text}" #if Rails.env.development?
+      if Rubysgate::Config.get :debug
+        puts "*** I would have sent the following to #{phonenumber}:"
+        puts args.inspect
       else
-        raise "sms send failed: #{r.inspect}"
+        if r = client.call('samurai.SessionInitiate', args)
+          puts "*** SMS sent to #{number} (#{r.inspect})"
+          puts "*** SMS text: #{text}" if Rubysgate::Config.get :debug
+        else
+          raise "sms send failed: #{r.inspect}"
+        end
       end
     end
 
