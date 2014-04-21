@@ -1,5 +1,5 @@
-class Rubysgate
-  def self.hi
-    puts "Hello world!"
-  end
+module Rubysgate
+  require "xmlrpc/client"
+  require "./rubysgate/sms"
+  require "./rubysgate/config"
 end

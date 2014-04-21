@@ -1,12 +1,12 @@
 Gem::Specification.new do |s|
   s.name        = 'rubysgate'
-  s.version     = '0.0.0'
+  s.version     = '0.1.0'
   s.date        = '2014-04-21'
   s.summary     = "sms via sipgate api"
   s.description = "Sending sms via sipgate api"
   s.authors     = ["Sebastian Neumann"]
   s.email       = 'github@tempo-tm.de'
-  s.files       = ["lib/rubysgate.rb"]
+  s.files       = `git ls-files`.split("\n")
   s.homepage    = 'https://github.com/tempo/rubysgate'
   s.license     = 'MIT'
 end
