@@ -1,12 +1,12 @@
 module Rubysgate
   class Sms
     def self.hi
-      puts "Hi #{Rubysgate::Config.username}, your pass is '#{Rubysgate::Config.password}'!"
+      puts "Hi #{Rubysgate::Config.get :username}, your pass is '#{Rubysgate::Config.get :password}'!"
     end
 
     def self.deliver(phonenumber, text)
-      user = Rubysgate::Config.username
-      url = "https://#{user}:#{Rubysgate::Config.password}@samurai.sipgate.net/RPC2"
+      user = Rubysgate::Config.get :username
+      url = "https://#{user}:#{Rubysgate::Config.get :password}@samurai.sipgate.net/RPC2"
       client = XMLRPC::Client.new2(url)
       client.call('samurai.ClientIdentify', {'ClientName' => 'Ruby-Client'} )
       number = strip_phonenumber(phonenumber)

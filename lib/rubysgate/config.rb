@@ -1,19 +1,22 @@
 module Rubysgate
   class Config
-    @@username = ""
-    @@password = ""
+    @@params={username:"",password:"",debug:false}
 
-    def self.username
-      @@username
+    def self.get *key
+      if key.empty?
+        return @@params
+      elsif key.size == 1
+        return @@params[key.first]
+      end
+      return nil
     end
-    def self.username= name
-      @@username = name
+
+    def self.set hash
+      @@params = hash
     end
-    def self.password
-      @@password
-    end
-    def self.password= pass
-      @@password = pass
+
+    def self.set key,value
+      @@params[key]=value
     end
   end
 end
