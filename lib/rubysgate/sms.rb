@@ -1,3 +1,6 @@
+# credits for base construct to Thomas Witt
+# https://gist.github.com/thomaswitt/4006850
+
 module Rubysgate
   class Sms
     def self.hi
