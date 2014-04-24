@@ -23,8 +23,10 @@ module RubySipgate
         puts args.inspect
       else
         if r = client.call('samurai.SessionInitiate', args)
-          puts "*** SMS sent to #{number} (#{r.inspect})"
-          puts "*** SMS text: #{text}" if RubySipgate::Config.get :debug
+          if RubySipgate::Config.get :verbose
+            puts "*** SMS sent to #{number} (#{r.inspect})"
+            puts "*** SMS text: #{text}"
+          end
           return r
         else
           raise "sms send failed: #{r.inspect}"
