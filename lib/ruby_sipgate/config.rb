@@ -1,4 +1,4 @@
-module Rubysgate
+module RubySipgate
   class Config
     @@params={username:"",password:"",debug:false}
 

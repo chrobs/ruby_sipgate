@@ -1,4 +1,4 @@
-Rubysgate
+ruby-sipgate
 =========
 
 Ruby Gem for sending sms via sipgate api
