@@ -1,4 +1,4 @@
-ruby-sipgate
+ruby sipgate
 =========
 
 Ruby Gem for sending sms via sipgate api
@@ -7,16 +7,17 @@ Ruby Gem for sending sms via sipgate api
 Usage
 ======
 
-require 'rubysgate'
+require 'ruby_sipgate'
 
-Rubysgate::Config.set :password, "your_password"
+RubySipgate::Config.set :password, "your_password"
 
-Rubysgate::Config.set :username, "your_username"
+RubySipgate::Config.set :username, "your_username"
 
-Rubysgate::Sms.deliver "015598765432", "Lorem Ipsum"
+RubySipgate::Sms.deliver "015598765432", "Lorem Ipsum"
 
 Config Parameters
 ==================
 * :password = ""
 * :username = ""
 * :debug = false
+* :verbose = false

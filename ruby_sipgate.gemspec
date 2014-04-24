@@ -9,6 +9,6 @@ Gem::Specification.new do |s|
   s.authors     = ["Sebastian Neumann"]
   s.email       = 'github@tempo-tm.de'
   s.files       = `git ls-files`.split("\n")
-  s.homepage    = 'https://github.com/tempo/ruby-sipgate'
+  s.homepage    = 'https://github.com/tempo/ruby_sipgate'
   s.license     = 'MIT'
 end
