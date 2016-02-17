@@ -18,6 +18,10 @@ module RubySipgate
         'TOS' => 'text',
         'Content' => text[0,159]
       }
+      if sourcenumber = RubySipgate::Config.get(:source)
+        strippedsource = strip_phonenumber(sourcenumber)
+        args['LocalUri'] = "sip:#{strippedsource}@sipgate.net"
+      end
       if RubySipgate::Config.get :debug
         puts "*** I would have sent the following to #{phonenumber}:"
         puts args.inspect
