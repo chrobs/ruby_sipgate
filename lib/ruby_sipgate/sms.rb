@@ -9,7 +9,7 @@ module RubySipgate
 
     def self.deliver(phonenumber, text)
       user = RubySipgate::Config.get :username
-      url = "https://#{user}:#{RubySipgate::Config.get :password}@samurai.sipgate.net/RPC2"
+      url = "https://#{user}:#{RubySipgate::Config.get :password}@api.sipgate.net/RPC2"
       client = XMLRPC::Client.new2(url)
       client.call('samurai.ClientIdentify', {'ClientName' => 'Ruby-Client'} )
       number = strip_phonenumber(phonenumber)
