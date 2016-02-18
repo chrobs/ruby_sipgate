@@ -1,6 +1,6 @@
 module RubySipgate
   class Config
-    @@params={username:"",password:"",debug:false,verbose:false}
+    @@params={username:"",password:"",source:nil,debug:false,verbose:false}
 
     def self.get *key
       if key.empty?
