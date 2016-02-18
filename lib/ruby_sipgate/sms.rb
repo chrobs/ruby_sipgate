@@ -3,6 +3,8 @@
 
 module RubySipgate
   class Sms
+    require 'cgi'
+
     def self.hi
       puts "Hi #{RubySipgate::Config.get :username}, your pass is '#{RubySipgate::Config.get :password}'!"
     end
